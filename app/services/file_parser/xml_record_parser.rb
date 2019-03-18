@@ -13,4 +13,3 @@ module FileParser
     end
   end
 end
-

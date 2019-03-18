@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "b2d29287-e77d-4cca-8a68-6ae677d3d0bb",
+		"name": "File Upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "XML",
+			"item": [
+				{
+					"name": "Single Record Report",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b91d9e5-9cea-4723-97ef-74b369063ad5",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.value).to.eql(100);",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<records>\n\t<record>\n    \t<title>Computer Science 1</title>\n\t\t<author>Programmer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>020.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n</records>\n"
+						},
+						"url": {
+							"raw": "localhost:3000/reports",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reports"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multiple Record Report",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cced22f5-5b95-49aa-b7da-7b95ab0c0ec2",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.value).to.eql(100);",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<records>\n    <record>\n\t\t<title>Computer Science 1</title>\n\t\t<author>Programmer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>020.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Computer Science 2</title>\n\t\t<author>Programmer 1</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>021.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Philosophy &amp;amp; Psychology 1</title>\n\t\t<author>Philosopher 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>120.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Philosophy &amp;amp; Psychology 2</title>\n\t\t<author>Philosopher 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>121.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Religion 1</title>\n\t\t<author>Religioner 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>220.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Religion 2</title>\n\t\t<author>Religion 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>221.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Social Sciences 1</title>\n\t\t<author>Social Sciencer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>320.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Social Sciences 2</title>\n\t\t<author>Social Sciencer 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>321.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Language 1</title>\n\t\t<author>Languager 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>420.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Language 2</title>\n\t\t<author>Languager 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>421.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Pure Science 1</title>\n\t\t<author>Pure Sciencer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>520.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Pure Science 2</title>\n\t\t<author>Pure Sciencer 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>521.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Applied Science 1</title>\n\t\t<author>Applied Sciencer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>620.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Applied Science 2</title>\n\t\t<author>Applied Sciencer 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>621.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Arts &amp;amp; Recreation 1</title>\n\t\t<author>Arts &amp;amp; Recreationer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>720.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Arts &amp;amp; Recreation 2</title>\n\t\t<author>Arts &amp;amp; Recreationer 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>721.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Literature 1</title>\n\t\t<author>Literaturer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>820.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>Literature 2</title>\n\t\t<author>Literaturer 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>821.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>History &amp;amp; Geography 1</title>\n\t\t<author>History &amp;amp; Geographer 1</author>\n\t\t<pages>1</pages>\n\t\t<dewey_decimal_code>920.563DUC</dewey_decimal_code>\n\t\t<book_read_status>fully</book_read_status>\n\t</record>\n\t<record>\n\t\t<title>History &amp;amp; Geography 2</title>\n\t\t<author>History &amp;amp; Geographer 2</author>\n\t\t<pages>2</pages>\n\t\t<dewey_decimal_code>921.563DUC</dewey_decimal_code>\n\t\t<book_read_status>partially</book_read_status>\n\t</record>\n</records>\n"
+						},
+						"url": {
+							"raw": "localhost:3000/reports",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reports"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e869dd1-9b12-4969-8319-7c42c7f7d12a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd2fa8a0-8421-470b-ab5b-880547507adb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "JSON",
+			"item": [
+				{
+					"name": "Single Record Report",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3946b56a-f370-455b-8167-09fd8c7893e9",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.value).to.eql(100);",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"records\": [\n\t\t\t\t\t\t\t {\n\t\t\t\t\t\t\t\t\"title\": \"Computer Science 1\",\n\t\t\t\t\t\t\t\t\"author\": \"Programmer 1\",\n\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"020.563DUC\",\n\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/reports",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reports"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multiple Record Report",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fbe10745-d32b-45a2-b6af-f54c1ca10f04",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.value).to.eql(100);",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"records\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Computer Science 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Programmer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"020.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Computer Science 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Programmer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"021.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Philosophy &amp; Psychology 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Philosopher 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"120.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Philosophy &amp; Psychology 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Philosopher 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"121.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Religion 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Religioner 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"220.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Religion 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Religion 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"221.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Social Sciences 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Social Sciencer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"320.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Social Sciences 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Social Sciencer 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"321.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Language 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Languager 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"420.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Language 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Languager 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"421.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Pure Science 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Pure Sciencer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"520.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Pure Science 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Pure Sciencer 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"521.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Applied Science 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Applied Sciencer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"620.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Applied Science 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Applied Sciencer 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"621.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Arts &amp; Recreation 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Arts &amp; Recreationer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"720.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Arts &amp; Recreation 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Arts &amp; Recreationer 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"721.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Literature 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Literaturer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"820.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"Literature 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"Literaturer 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"821.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"History &amp; Geography 1\",\n\t\t\t\t\t\t\t\t\t\"author\": \"History &amp; Geographer 1\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"920.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"title\": \"History &amp; Geography 2\",\n\t\t\t\t\t\t\t\t\t\"author\": \"History &amp; Geographer 2\",\n\t\t\t\t\t\t\t\t\t\"pages\": \"2\",\n\t\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"921.563DUC\",\n\t\t\t\t\t\t\t\t\t\"book_read_status\": \"partially\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n}\n"
+						},
+						"url": {
+							"raw": "localhost:3000/reports",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reports"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e869dd1-9b12-4969-8319-7c42c7f7d12a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd2fa8a0-8421-470b-ab5b-880547507adb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

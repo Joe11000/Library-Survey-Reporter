@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "0b176b05-6d4b-427c-981f-000aa9577ef3",
+		"name": "Form Submission",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /reports  with JSON Body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0752bdb-e192-440c-96c2-cbcc5f123055",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.value).to.eql(100);",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"records\": [\n\t\t\t\t\t\t\t {\n\t\t\t\t\t\t\t\t\"title\": \"Computer Science 1\",\n\t\t\t\t\t\t\t\t\"author\": \"Programmer 1\",\n\t\t\t\t\t\t\t\t\"pages\": \"1\",\n\t\t\t\t\t\t\t\t\"dewey_decimal_code\": \"020.563DUC\",\n\t\t\t\t\t\t\t\t\"book_read_status\": \"fully\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/reports",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reports"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "application",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "xml upload",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}

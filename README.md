@@ -19,8 +19,6 @@
 
 # 7) Submitting either form will direct you to the html report on a seperate page ('/reports')
     ie Sample record files to upload are 
-    json --> app/spec/fixtures/request_bodies/json_files/*
-    xml  --> app/spec/fixtures/request_bodies/xml_files/*
-    csv  --> app/spec/fixtures/request_bodies/csv_files/*
-
-
+    json --> spec/fixtures/request_bodies/json_files/*
+    xml  --> spec/fixtures/request_bodies/xml_files/*
+    csv  --> spec/fixtures/request_bodies/csv_files/*

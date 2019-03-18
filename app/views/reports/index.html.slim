@@ -6,4 +6,3 @@ h3 By Category:
 ul 
   - @report['category_breakdown'].each do |category_number, category_info| 
     li.dewey_decimal_category.indent-1 = "#{category_info['name']}: #{category_info['pages_read']}"
-
